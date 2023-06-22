@@ -53,7 +53,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "devdocs"
+          source: "devdocs/*"
           target: "/var/www/share/devdocs.mage-os.org/htdocs/."
 
       - name: Extract and setup on server
@@ -62,9 +62,10 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          script: |
+          script: | 
             cd /var/www/share/devdocs.mage-os.org/htdocs/
             mv devdocs/* .
+            rm -rf devdocs
             composer install --no-dev
             php artisan optimize
             php artisan cache:clear
