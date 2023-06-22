@@ -67,6 +67,7 @@ jobs:
             rm -Rf htdocs
             cp shared/.env devdocs/.env
             ln -s devdocs/public htdocs
+            cd devdocs
             composer install --no-dev
             php artisan optimize
             php artisan cache:clear
