@@ -137,7 +137,7 @@
 
                     <section class="mt-8 md:mt-16">
                         <section class="docs_main max-w-prose">
-                            @unless ($currentVersion == 'master' || version_compare($currentVersion, DEFAULT_VERSION) >= 0)
+                            @unless ($currentVersion == 'main' || version_compare($currentVersion, DEFAULT_VERSION) >= 0)
                                 <blockquote>
                                     <div class="mb-10 max-w-2xl mx-auto px-4 py-8 shadow-lg dark:bg-dark-600 lg:flex lg:items-center">
                                         <div class="w-20 h-20 mb-6 flex items-center justify-center shrink-0 bg-orange-600 lg:mb-0">
