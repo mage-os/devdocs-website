@@ -65,7 +65,7 @@ jobs:
           script: | 
             cd /var/www/share/devdocs.mage-os.org/
             rm -Rf htdocs
-            cp shared./.env devdocs/.env
+            cp shared/.env devdocs/.env
             ln -s devdocs/public htdocs
             composer install --no-dev
             php artisan optimize
