@@ -1,6 +1,5 @@
 <?php
 
-use App\Documentation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DocsController;
 
@@ -12,12 +11,6 @@ Route::get('docs', [DocsController::class, 'showRootPage']);
 
 Route::get('docs/{version}/index.json', [DocsController::class, 'index']);
 Route::get('docs/{version}/{page?}', [DocsController::class, 'show'])->name('docs.version');
-
-Route::redirect('partners', 'https://partners.laravel.com');
-
-Route::get('partner/{partner}', function ($partner) {
-    return redirect('https://partners.laravel.com/partners/'.$partner, 301);
-});
 
 Route::get('/', fn() => view('marketing'))->name('marketing');
 
@@ -118,11 +111,3 @@ Route::get('team', function () {
         ]
     ]);
 })->name('team');
-
-Route::get('/frontend', function () {
-    return view('frontend');
-})->name('frontend');
-
-Route::get('/trademark', function () {
-    return view('trademark');
-})->name('trademark');
