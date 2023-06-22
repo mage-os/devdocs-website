@@ -64,7 +64,6 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/share/devdocs.mage-os.org/htdocs/
-            tar -zxvf devdocs.tar.gz
             composer install --no-dev
             php artisan optimize
             php artisan cache:clear
