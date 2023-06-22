@@ -53,8 +53,8 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          source: "devdocs"
-          target: "/var/www/share/devdocs.mage-os.org/htdocs/*"
+          source: "devdocs/*"
+          target: "/var/www/share/devdocs.mage-os.org/htdocs/."
 
       - name: Extract and setup on server
         uses: appleboy/ssh-action@master
