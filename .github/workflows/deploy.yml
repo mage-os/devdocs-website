@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Website Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           path: 'devdocs'
 
@@ -39,6 +39,7 @@ jobs:
       - name: Add Docs to Website
         run: |
           cd devdocs
+          chmod +x ./bin/checkout_latest_docs.sh
           ./bin/checkout_latest_docs.sh
 
       - name: Compress Website
