@@ -11,7 +11,7 @@ for v in "${DOCS_VERSIONS[@]}"; do
         (cd resources/docs/$v && git pull)
     else
         echo "Cloning $v..."
-        git clone --single-branch --branch "$v" https://github.com/davidlambauer/devdocs "resources/docs/$v"
+        git clone --single-branch --branch "$v" https://github.com/DavidLambauer/devdocs.git "resources/docs/$v"
         cp storage/navigation/$v/documentation.md "resources/docs/$v/"
     fi;
 done
