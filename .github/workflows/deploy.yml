@@ -71,4 +71,3 @@ jobs:
             composer install --no-dev
             php artisan optimize
             php artisan cache:clear
-            
