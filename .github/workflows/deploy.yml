@@ -1,0 +1,70 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Website Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'devdocs'
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: Install dependencies
+        run: |
+          cd devdocs
+          composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19'
+
+      - name: Install Node dependencies and build assets
+        run: |
+          cd devdocs
+          npm install
+          npm run build
+
+      - name: Add Docs to Website
+        run: |
+          cd devdocs
+          ./bin/checkout_latest_docs.sh
+
+      - name: Compress Website
+        run: |
+          cd devdocs
+          tar -zcvf devdocs.tar.gz .
+
+      - name: SCP devdocs application to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "devdocs/devdocs.tar.gz"
+          target: "/var/www/share/devdocs.mage-os.org/htdocs/"
+
+      - name: Extract and setup on server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/share/devdocs.mage-os.org/htdocs/
+            tar -zxvf devdocs.tar.gz
+            composer install --no-dev
+            php artisan optimize
+            php artisan cache:clear
+            
