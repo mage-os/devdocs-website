@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           source: "devdocs/*"
-          target: "/var/www/share/devdocs.mage-os.org/htdocs/devdocs"
+          target: "/var/www/share/devdocs.mage-os.org/"
 
       - name: Extract and setup on server
         uses: appleboy/ssh-action@master
@@ -64,8 +64,9 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: | 
             cd /var/www/share/devdocs.mage-os.org/htdocs/
-            mv devdocs/* .
-            rm -rf devdocs
+            rm -Rf htdocs
+            cp shared./.env devdocs/.env
+            ln -s devdocs/public htdocs
             composer install --no-dev
             php artisan optimize
             php artisan cache:clear
