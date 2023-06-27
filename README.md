@@ -1,41 +1,48 @@
-## Laravel Website
+## Mage-OS DevDocs Website
 
-This is the source of the official [Laravel website](https://laravel.com).
+This is the source of the official [Mage-OS DevDocs Website](https://devdocs.mage-os.org).
+
+## Contribute to the Documentation
+
+If you want to curate, edit, add or change content on the documentation, please go
+to [the Mage-OS DevdDocs Repository](https://github.com/mage-os/devdocs).
 
 ## Local Development
 
-If you want to work on this project on your local machine, you may follow the instructions below. These instructions assume you are serving the site using Laravel Valet out of your `~/Sites` directory:
+The website is build with Laravel. **A database is not required**. You can run the website locally with the following
+commands:
 
-1. Fork this repository 
-2. Open your terminal and `cd` to your `~/Sites` folder
-3. Clone your fork into the `~/Sites/laravel` folder, by running the following command *with your username placed into the {username} slot*:
-    ```bash
-    git clone git@github.com:{username}/laravel.com laravel
-    ```
-4. CD into the new directory you just created:
-    ```bash
-    cd laravel
-    ```
-5. Run the `setup.sh` bin script, which will take all the steps necessary to prepare your local install:
-    ```bash
-    ./bin/setup.sh
-    ```
-   
-### Torchlight Integration
-
-This project relies on Torchlight for syntax highlighting. You will need to create an account at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. Once generated, add your token to your .env file:
-
-```ini
-TORCHLIGHT_TOKEN=your-torchlight-token
+```bash
+composer install
+npm install
+npm run dev
+php artisan serve
 ```
 
-### Syncing Upstream Changes Into Your Fork 
+There is no container based setup. There are plenty of different setups out there, so we leave it up to you to choose
+your favorite one. If you want a docker-based setup, [Laravel's Sail](https://laravel.com/docs/10.x/sail) might be an 
+option for you. 
 
-This [GitHub article](https://help.github.com/en/articles/syncing-a-fork) provides instructions on how to pull the latest changes from this repository into your fork.
+### Torchlight Integration
+
+This project relies on Torchlight for syntax highlighting. You will need to create an account
+at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. Once generated,
+add your token to your .env file:
+
+```ini
+TORCHLIGHT_TOKEN = your-torchlight-token
+```
+
+### Syncing Upstream Changes Into Your Fork
+
+This [GitHub article](https://help.github.com/en/articles/syncing-a-fork) provides instructions on how to pull the
+latest changes from this repository into your fork.
 
 ### Updating After Remote Code Changes
 
-If you pull down the upstream changes from this repository into your local repository, you'll want to update your Composer and NPM dependencies, as well as update your documentation branches. For convenience, you may run the `bin/update.sh` script to update these things:
+If you pull down the upstream changes from this repository into your local repository, you'll want to update your
+Composer and NPM dependencies, as well as update your documentation branches. For convenience, you may run
+the `bin/update.sh` script to update these things:
 
 ```bash
 ./bin/update.sh
