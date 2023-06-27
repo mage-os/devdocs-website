@@ -1,0 +1,56 @@
+.docs_main {
+    /* Headers */
+    & h1, & h2, & h3, & h4, & h5, & h6, & h4 a, & h3 a, & h2 a {
+        @apply dark:text-gray-200;
+    }
+
+    /* Body text */
+    & p, & ul:not(:first-of-type) li, & .content-list ul li, & #software-list, & #valet-support {
+        @apply dark:text-gray-400;
+    }
+
+    /* Table of contents */
+    & h1 + ul li a {
+        @apply dark:text-gray-300;
+    }
+
+    /* Links */
+    & p a, & ul a, & ol a {
+        @apply dark:text-red-600;
+    }
+
+    /* Tables */
+    & table th {
+        @apply dark:text-gray-200;
+        @apply dark:border-gray-700;
+    }
+
+    & table td {
+        @apply dark:text-gray-400;
+        @apply dark:border-gray-700;
+    }
+
+    & table td.support-policy-highlight {
+      @apply dark:text-black;
+    }
+}
+
+.docs_sidebar {
+    /* Sidebar links */
+    & ul li h2, & ul li a {
+        @apply dark:text-gray-400;
+    }
+}
+
+/* Pound sign before headings */
+.dark .docs_main {
+    & h4 a:before, & h3 a:before, & h2 a:before {
+        opacity: 1;
+    }
+}
+
+/* Color mode buttons */
+#header__sun, #header__moon, #header__indeterminate { display: none; }
+html[color-theme="dark"] #header__moon { display: block; }
+html[color-theme="light"] #header__sun { display: block; }
+html[color-theme="system"] #header__indeterminate { display: block; }

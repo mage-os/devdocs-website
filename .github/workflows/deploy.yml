@@ -1,0 +1,73 @@
+name: "🚀 - Deploy"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: "✏️ - Build and Deploy Website"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "⚙️ - Checkout Website Repo"
+        uses: actions/checkout@v3
+        with:
+          path: 'devdocs'
+
+      - name: "🐘 - Setup PHP"
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+
+      - name: "🐘 - Install PHP dependencies"
+        run: |
+          cd devdocs
+          composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: "🤡 - Setup Node.js"
+        uses: actions/setup-node@v2
+        with:
+          node-version: '19'
+
+      - name: "🧱 - Install Node dependencies and build assets"
+        run: |
+          cd devdocs
+          npm install
+          npm run build
+
+      - name: "📦 - Add Docs to Website"
+        run: |
+          cd devdocs
+          chmod +x ./bin/checkout_latest_docs.sh
+          ./bin/checkout_latest_docs.sh
+
+      - name: "📦 - Deploy Website"
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          source: "devdocs/*"
+          target: "/var/www/share/devdocs.mage-os.org/"
+
+      - name: "🛸 - Extract and setup on server"
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          script: | 
+            cd /var/www/share/devdocs.mage-os.org/
+            rm -Rf htdocs
+            cp shared/.env devdocs/.env
+            ln -s devdocs/public htdocs
+            cd devdocs
+            composer install --no-dev
+            php artisan optimize
+            php artisan cache:clear
+            php artisan route:clear
+            php artisan view:clear
+            php artisan config:clear
+            php artisan sitemap:generate
