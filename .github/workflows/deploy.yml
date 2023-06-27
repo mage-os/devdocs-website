@@ -1,4 +1,4 @@
-name: Deploy
+name: "🚀 - Deploy"
 
 on:
   push:
@@ -7,47 +7,43 @@ on:
 
 jobs:
   build:
+    name: "✏️ - Build and Deploy Website"
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Website Repo
+      - name: "⚙️ - Checkout Website Repo"
         uses: actions/checkout@v3
         with:
           path: 'devdocs'
 
-      - name: Setup PHP
+      - name: "🐘 - Setup PHP"
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.1'
 
-      - name: Install dependencies
+      - name: "🐘 - Install PHP dependencies"
         run: |
           cd devdocs
           composer install --no-progress --prefer-dist --optimize-autoloader
 
-      - name: Setup Node.js
+      - name: "🤡 - Setup Node.js"
         uses: actions/setup-node@v2
         with:
           node-version: '19'
 
-      - name: Install Node dependencies and build assets
+      - name: "🧱 - Install Node dependencies and build assets"
         run: |
           cd devdocs
           npm install
           npm run build
 
-      - name: Add Docs to Website
+      - name: "📦 - Add Docs to Website"
         run: |
           cd devdocs
           chmod +x ./bin/checkout_latest_docs.sh
           ./bin/checkout_latest_docs.sh
 
-      #- name: Compress Website
-      #  run: |
-      #    cd devdocs
-      #    tar -zcvf devdocs.tar.gz --exclude-from=.artifactignore  --warning=no-file-changed .
-
-      - name: SCP devdocs application to server
+      - name: "📦 - Deploy Website"
         uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.HOST }}
@@ -56,7 +52,7 @@ jobs:
           source: "devdocs/*"
           target: "/var/www/share/devdocs.mage-os.org/"
 
-      - name: Extract and setup on server
+      - name: "🛸 - Extract and setup on server"
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
