@@ -34,8 +34,8 @@
                 <div class="relative mx-auto w-full py-10 bg-white transition duration-200 dark:bg-dark-700">
                     <div class="mx-auto px-8 sm:px-16 flex items-center justify-between">
                         <a href="/" class="flex items-center">
-                            <img class="" src="/img/logomark.min.svg" alt="Laravel">
-                            <img class="hidden ml-5 sm:block" src="/img/logotype.min.svg" alt="Laravel">
+                            <img class="" src="/img/logomark.min.svg" alt="Mage-OS">
+                            <img class="hidden ml-5 sm:block" src="/img/logotype.min.svg" alt="Mage-OS">
                         </a>
                         <div class="flex-1 flex items-center justify-end">
                             <button id="header__sun" onclick="toSystemMode()" title="Switch to system theme" class="relative w-10 h-10 focus:outline-none focus:shadow-outline text-gray-500">
@@ -115,7 +115,7 @@
                                 <div x-data class="relative w-full bg-white transition-all duration-500 focus-within:border-gray-600 dark:bg-gray-800">
                                     <select
                                         id="version-switcher"
-                                        aria-label="Laravel version"
+                                        aria-label="Mage-OS version"
                                         class="appearance-none flex-1 w-full px-0 py-1 placeholder-gray-900 tracking-wide bg-white focus:outline-none dark:bg-dark-700 dark:text-gray-400 dark:placeholder-gray-500"
                                         @change="window.location = $event.target.value"
                                     >
@@ -145,8 +145,8 @@
                                         </div>
 
                                         <p class="mb-0 lg:ml-4">
-                                            <strong>WARNING</strong> You're browsing the documentation for an old version of Laravel.
-                                            Consider upgrading your project to <a href="{{ route('docs.version', DEFAULT_VERSION) }}">Laravel {{ DEFAULT_VERSION }}</a>.
+                                            <strong>WARNING</strong> You're browsing the documentation for an old version of Mage-OS.
+                                            Consider upgrading your project to <a href="{{ route('docs.version', DEFAULT_VERSION) }}">Mage-OS {{ DEFAULT_VERSION }}</a>.
                                         </p>
                                     </div>
                                 </blockquote>
@@ -161,7 +161,7 @@
                                             </div>
 
                                             <p class="mb-0 lg:ml-4">
-                                                <strong>WARNING</strong> You're browsing the documentation for an upcoming version of Laravel.
+                                                <strong>WARNING</strong> You're browsing the documentation for an upcoming version of Mage-OS.
                                                 The documentation and features of this release are subject to change.
                                             </p>
                                         </div>

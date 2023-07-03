@@ -4,7 +4,7 @@ docsearch({
     container: '#docsearch',
     appId: algolia_app_id,
     apiKey: algolia_search_key,
-    indexName: 'laravel',
+    indexName: 'devmage-os',
     searchParameters: {
         facetFilters: ['version:' + window.version],
     },
