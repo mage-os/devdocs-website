@@ -44,3 +44,8 @@
 .version-colors div.security-fixes div:first-child {
     @apply bg-orange-600;
 }
+
+.mermaid {
+    background-color:#292D3E;
+    @apply p-4;
+}
