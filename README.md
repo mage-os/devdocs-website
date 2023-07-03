@@ -19,6 +19,12 @@ npm run dev
 php artisan serve
 ```
 
+Now add the documentation itself;
+
+```
+bash bin/checkout_latest_docs.sh
+```
+
 There is no container based setup. There are plenty of different setups out there, so we leave it up to you to choose
 your favorite one. If you want a docker-based setup, [Laravel's Sail](https://laravel.com/docs/10.x/sail) might be an 
 option for you. 
