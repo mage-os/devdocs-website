@@ -57,6 +57,23 @@ class Documentation
     }
 
     /**
+     * Get the URL to edit the documentation.
+     *
+     * @param  string  $version
+     * @param  string  $page
+     * @return string
+     */
+    public function getEditUrl($version, $page)
+    {
+        $baseEditUrl = 'https://github.com/mage-os/devdocs/edit/';
+
+        // Assuming page paths correspond with file paths in the repository,
+        // and that all files are .md (Markdown) files.
+        return "{$baseEditUrl}/{$version}/{$page}.md";
+    }
+
+
+    /**
      * Get the given documentation page.
      *
      * @param  string  $version
