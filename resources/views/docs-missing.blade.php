@@ -3,7 +3,7 @@
 @if($otherVersions->isEmpty())
     <p>Nothing to see here.</p>
 @else
-    <p>This page does not exist for this version of Laravel but was found in other versions.</p>
+    <p>This page does not exist for this version of Mage-OS but was found in other versions.</p>
 
     <div>
         <ul class="list-custom leading-4 space-y-3">

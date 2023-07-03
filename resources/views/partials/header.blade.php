@@ -34,21 +34,5 @@
         x-transition:leave="duration-100 ease-in"
         x-cloak
     >
-        <nav
-            x-show="navIsOpen"
-            x-transition.opacity
-            x-cloak
-            class="fixed inset-0 w-full pt-[4.2rem] z-10 pointer-events-none"
-        >
-            <div class="relative h-full w-full py-8 px-5 bg-white pointer-events-auto overflow-y-auto">
-                <ul>
-                    <li><a class="block w-full py-2" href="https://forge.laravel.com">Forge</a></li>
-                    <li><a class="block w-full py-2" href="https://vapor.laravel.com">Vapor</a></li>
-                    <li><a class="block w-full py-3" href="https://laravel-news.com">News</a></li>
-                    <li><a class="block w-full py-3" href="https://partners.laravel.com">Partners</a></li>
-                    <li class="flex sm:justify-center"><x-button.secondary class="mt-3 w-full max-w-md" href="/docs">Documentation</x-button.secondary></li>
-                </ul>
-            </div>
-        </nav>
     </div>
 </header>

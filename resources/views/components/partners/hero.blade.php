@@ -1,6 +1,6 @@
 <section class="py-12 md:py-20 lg:py-32">
     <div class="max-w-screen-xl mx-auto px-8">
-        <h6 class="text-gray-600 font-medium text-sm">Laravel Partner</h6>
+        <h6 class="text-gray-600 font-medium text-sm">Mage-OS Partner</h6>
         <div class="mt-8 lg:flex lg:items-center lg:justify-between">
             {{ $logo }}
             <div class="mt-8 flex items-center space-x-4 lg:mt-0">

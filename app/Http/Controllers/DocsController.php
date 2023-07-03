@@ -123,6 +123,7 @@ class DocsController extends Controller
             'versions' => Documentation::getDocVersions(),
             'currentSection' => $section,
             'canonical' => $canonical,
+            'edit_link' => $this->docs->getEditUrl($version, $sectionPage),
         ]);
     }
 
