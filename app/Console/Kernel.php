@@ -25,8 +25,6 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('sitemap:generate')->daily();
-        $schedule->exec('bash /home/forge/laravel.com/build/api.sh')->daily();
-        $schedule->exec('bash /home/forge/laravel.com/build/docs.sh')->everyFiveMinutes();
     }
 
     /**
