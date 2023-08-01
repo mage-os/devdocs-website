@@ -79,7 +79,7 @@ class DocsController extends Controller
             define('CURRENT_VERSION', $version);
         }
 
-        $sectionPage = $page ?: 'overview-of-magento-2';
+        $sectionPage = $page ?: 'installation-guide';
         $content = $this->docs->get($version, $sectionPage);
 
         if (is_null($content)) {

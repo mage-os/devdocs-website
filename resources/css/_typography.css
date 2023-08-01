@@ -212,3 +212,7 @@
     background: url(/img/icons/ul_marker.min.svg) no-repeat 50%;
     background-size: contain;
 }
+
+.table-of-contents {
+    margin-bottom: 2em !important;
+}

@@ -185,6 +185,7 @@ class Documentation
     {
         return [
             'main' => 'Main',
+            'develop' => 'Develop',
             '2.4.5' => '2.4.5',
         ];
     }
