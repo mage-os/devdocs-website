@@ -2,13 +2,10 @@
 
 namespace App\Markdown;
 
-use League\CommonMark\Extension\Autolink\AutolinkExtension;
 use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension;
-use League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkRenderer;
 use League\CommonMark\Extension\TableOfContents\TableOfContentsExtension;
 use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Environment\Environment;
-use App\Markdown\GithubFlavoredMarkdownExtension;
 use Torchlight\Commonmark\V2\TorchlightExtension;
 use League\CommonMark\Environment\EnvironmentInterface;
 use League\CommonMark\Extension\Attributes\AttributesExtension;

@@ -23,75 +23,40 @@ Route::get('team', function () {
                 'twitter_username' => 'davidlambauer',
                 'location' => 'Germany',
             ], [
-                'name' => 'Ivan Chepurnyi',
-                'github_username' => 'IvanChepurnyi',
-                'twitter_username' => 'IvanChepurnyi',
-                'location' => 'Netherlands',
+                'name' => 'John Prendergast',
+                'github_username' => 'johnprendergast',
+                'twitter_username' => 'johnprendergast',
+                'location' => 'Ireland',
+            ],  [
+                'name' => 'John Hughes',
+                'github_username' => 'johnhughes1984',
+                'twitter_username' => 'JohnHughes1984',
+                'location' => 'Shrewsbury, United Kingdom',
+            ],  [
+                'name' => 'Ryan Hoerr',
+                'github_username' => 'rhoerr',
+                'twitter_username' => 'ryanhoerr',
+                'location' => 'Lancaster, PA USA',
             ], [
-                'name' => 'Rafael Corrêa Gomes',
-                'github_username' => 'rafaelstz',
-                'twitter_username' => 'rafaelcgstz',
-                'location' => 'Montreal, CA',
+                'name' => 'Peter Jaap Blaakmeer',
+                'github_username' => 'PeterJaap',
+                'twitter_username' => 'PeterJaap',
+                'location' => 'Groningen, Netherlands',
             ], [
-                'name' => 'Gonzalo Pelon',
-                'github_username' => 'gomencal',
-                'twitter_username' => 'gonzalopelon',
-                'location' => 'Spain',
+                'name' => 'Alessandro Ronchi',
+                'github_username' => 'aleron75',
+                'twitter_username' => 'aleron75',
+                'location' => 'Reggio Emilia - Italy',
             ], [
-                'name' => 'Rye Miller',
-                'github_username' => 'ryemiller',
-                'twitter_username' => 'ryemiller',
-                'location' => 'Denver',
+                'name' => 'Brent W. Peterson',
+                'github_username' => 'brentwpeterson',
+                'twitter_username' => 'brentwpeterson',
+                'location' => 'Saint Louis Park',
             ], [
-                'name' => 'Matthias Walter',
-                'github_username' => 'mwr',
-                'twitter_username' => 'mat_walter',
-                'location' => 'Germany',
-            ], [
-                'name' => 'Jerry Lopez',
-                'github_username' => 'jerrylopez',
-                'twitter_username' => 'jerrylopezdev',
-                'location' => 'Texas',
-            ], [
-                'name' => 'Kuba Zwolinski',
-                'github_username' => 'snowdog',
-                'twitter_username' => 'snowdog',
-                'location' => 'Poland',
-            ], [
-                'name' => 'Sascha Wohlgemuth',
-                'github_username' => 'Celldweller',
-                'twitter_username' => 'Nomad73',
-                'location' => 'Germany',
-            ],[
-                'name' => 'Sean van Zuidam',
-                'github_username' => 'GrimLink',
-                'twitter_username' => 'GrimLink',
-                'location' => 'Netherlands',
-            ],[
-                'name' => 'Sanjay Patel',
-                'github_username' => 'sanjay-evrig',
-                'twitter_username' => 'sanjaypatel653',
-                'location' => 'Ahmemdabad, India',
-            ],[
-                'name' => 'Max Uroda',
-                'github_username' => 'u-maxx',
-                'twitter_username' => 'u_maxx',
-                'location' => 'Ukraine',
-            ],[
-                'name' => 'Torben Höhn',
-                'github_username' => 'torhoen',
-                'twitter_username' => 'torhoen',
-                'location' => 'Germany',
-            ],[
-                'name' => 'Kiel',
-                'github_username' => 'pykettk',
-                'twitter_username' => 'level42psyduck',
-                'location' => 'United Kingdom',
-            ],[
-                'name' => 'Willem Poortman',
-                'github_username' => 'wpoortman',
-                'twitter_username' => 'wpoortman',
-                'location' => 'Netherlands',
+                'name' => 'Roland Haselager',
+                'github_username' => 'rhaselager',
+                'twitter_username' => 'rhaselager',
+                'location' => 'Utrecht, The Netherlands',
             ],[
                 'name' => 'Simon Sprankel',
                 'github_username' => 'sprankhub',
@@ -103,11 +68,11 @@ Route::get('team', function () {
                 'twitter_username' => 'VinaiKopp',
                 'location' => 'Germany',
             ],[
-                'name' => 'Christian Münch',
-                'github_username' => 'cmuench',
-                'twitter_username' => 'cmuench',
-                'location' => 'Germany',
-            ],
+                'name' => 'Damien Retzinger',
+                'github_username' => 'damienwebdev',
+                'twitter_username' => 'damienwebdev',
+                'location' => 'Richmond, VA',
+            ]
         ]
     ]);
 })->name('team');
