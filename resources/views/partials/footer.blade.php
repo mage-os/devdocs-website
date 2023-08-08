@@ -29,7 +29,7 @@
                  'Hyvä' => 'https://www.hyva.io/',
                  'Amasty' => 'https://amasty.com/',
                  'Elgentos' => 'https://elgentos.nl/',
-                 'Maxcluster' => 'https://maxcluster.de/',
+                 'maxcluster' => 'https://maxcluster.de/',
                  'Aonach' => 'https://aonach.com/',
              ]
          ],
