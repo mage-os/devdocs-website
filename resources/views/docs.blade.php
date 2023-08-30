@@ -131,25 +131,6 @@
                                 </svg>
                             </button>
                         </div>
-                        <div class="w-full lg:w-40 lg:pl-12">
-                            <div>
-                                <label class="text-gray-600 text-xs tracking-widest uppercase dark:text-gray-500" for="version-switcher">Version</label>
-                                <div x-data class="relative w-full bg-white transition-all duration-500 focus-within:border-gray-600 dark:bg-gray-800">
-                                    <select
-                                        id="version-switcher"
-                                        aria-label="Mage-OS version"
-                                        class="appearance-none flex-1 w-full px-0 py-1 placeholder-gray-900 tracking-wide bg-white focus:outline-none dark:bg-dark-700 dark:text-gray-400 dark:placeholder-gray-500"
-                                        @change="window.location = $event.target.value"
-                                    >
-                                        @foreach ($versions as $key => $display)
-                                            <option {{ $currentVersion == $key ? 'selected' : '' }} value="{{ url('docs/'.$key.$currentSection) }}">{{ $display }}</option>
-                                        @endforeach
-                                    </select>
-                                    <img class="absolute inset-y-0 right-0 mt-2.5 w-2.5 h-2.5 text-gray-900 pointer-events-none dark:hidden" src="/img/icons/drop_arrow.min.svg" alt="">
-                                    <img class="absolute inset-y-0 right-0 mt-2.5 w-2.5 h-2.5 text-gray-900 pointer-events-none hidden dark:block" src="/img/icons/drop_arrow.dark.min.svg" alt="">
-                                </div>
-                            </div>
-                        </div>
                         <div class="relative mt-8 flex items-center justify-end w-full h-10 lg:mt-0">
                             <div class="flex-1 flex items-center">
                                 <button id="docsearch" class="text-gray-800 transition-colors dark:text-gray-400 w-full"></button>
