@@ -72,7 +72,7 @@
     h4 a:before,
     h3 a:before,
     h2 a:before {
-        content: "#";
+        content: "»";
         font-weight: 400;
         position: absolute;
         color: theme('colors.red.600');
@@ -157,7 +157,7 @@
             text-decoration: none;
 
             &::before {
-                content: "# ";
+                content: "» ";
                 color: theme('colors.orange.600');
             }
         }
