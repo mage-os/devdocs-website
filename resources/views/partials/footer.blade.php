@@ -101,7 +101,7 @@
                 Magento® is a registered trademark of Adobe Inc. <b>Mage-OS is not affiliated with Adobe or Magento Open Source in any way.</b>
             </p>
             <p class="mt-6 text-xs text-gray-700 {{ $is_docs_page ? 'dark:text-gray-400' : '' }}">
-                Code highlighting provided by <a href="https://torchlight.dev">Torchlight</a>
+                Documentation framework forked from <a href="https://laravel.com/docs">Laravel</a>. Code highlighting provided by <a href="https://torchlight.dev">Torchlight</a>
             </p>
         </div>
     </div>
