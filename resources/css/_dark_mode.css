@@ -5,12 +5,12 @@
     }
 
     /* Body text */
-    & p, & ul:not(:first-of-type) li, & .content-list ul li, & #software-list, & #valet-support {
+    & p, & ul:not(:first-of-type) li, & .content-list ul li, & #software-list, & #valet-support,  & ol:not(:first-of-type) li, & ol li {
         @apply dark:text-gray-400;
     }
 
     /* Table of contents */
-    & h1 + ul li a {
+    & h1 + ul li a, ol li a {
         @apply dark:text-gray-300;
     }
 
