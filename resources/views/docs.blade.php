@@ -34,8 +34,8 @@
                 <div class="relative mx-auto w-full py-10 bg-white transition duration-200 dark:bg-dark-700">
                     <div class="mx-auto px-8 sm:px-16 flex items-center justify-between">
                         <a href="/" class="flex items-center">
-                            <img class="w-[250px]" src="/img/Mage-OSLogoOrange.svg" alt="Mage-OS">
-                            <img class="hidden ml-5 sm:block w-[250px]" src="/img/Mage-OSLogoOrange.svg" alt="Mage-OS">
+                            <img class="max-h-8 sm:max-h-10" src="/img/Mage-OSLogoMark.svg" alt="Mage-OS">
+                            <img class="hidden ml-6 sm:max-h-10 sm:block" src="/img/Mage-OSLogoType.svg" alt="Mage-OS">
                         </a>
                         <div class="flex-1 flex items-center justify-end">
                             <button id="header__sun" onclick="toSystemMode()" title="Switch to system theme" class="relative w-10 h-10 focus:outline-none focus:shadow-outline text-gray-500">
