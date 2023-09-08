@@ -49,6 +49,8 @@
     }
 }
 
+.dark .cls-1,.cls-2{fill:none;stroke:#fff;stroke-linejoin:round;}.cls-1{stroke-linecap:round;}
+
 /* Color mode buttons */
 #header__sun, #header__moon, #header__indeterminate { display: none; }
 html[color-theme="dark"] #header__moon { display: block; }
