@@ -1,15 +1,14 @@
 .docs_sidebar {
-    ul {
+    & ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
 
-        li {
+        & li {
             display: block;
             padding: .65em 0;
-            white-space: nowrap;
 
-            h2 {
+            & h2 {
                 display: block;
                 font-size: 0.875em;
                 font-weight: 500;
@@ -24,7 +23,7 @@
                 }
             }
 
-            a {
+            & a {
                 display: block;
                 font-size: .875em;
                 font-weight: 500;
@@ -38,13 +37,13 @@
             }
         }
 
-        ul {
+        & ul {
             overflow: hidden;
             max-height: 0;
             transition: max-height .45s ease;
 
-            li {
-                a {
+            & li {
+                & a {
                     position: relative;
                     padding-left: 1em;
                     font-weight: 400;
@@ -66,7 +65,7 @@
                 margin-bottom: 1em;
             }
 
-            ul {
+            & ul {
                 max-height: none;
             }
         }
