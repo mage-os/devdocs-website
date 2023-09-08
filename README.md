@@ -37,8 +37,9 @@ option for you.
 ### Torchlight Integration
 
 This project relies on Torchlight for syntax highlighting. You will need to create an account
-at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. Once generated,
-add your token to your .env file:
+at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. If you used 
+the `bin/setup.sh` script to setup the project, the token is in your .env file. If not, add the following line to your
+.env file manually:
 
 ```ini
 TORCHLIGHT_TOKEN=your-torchlight-token
