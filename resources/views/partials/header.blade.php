@@ -4,8 +4,6 @@
     @keydown.window.escape="navIsOpen = false"
     @click.away="navIsOpen = false"
 >
-    <x-header-news-bar />
-
     <div class="relative max-w-screen-2xl mx-auto w-full py-4 bg-white transition duration-200 lg:bg-transparent lg:py-6">
         <div class="max-w-screen-xl mx-auto px-5 flex items-center justify-between">
             <div class="flex-1">
