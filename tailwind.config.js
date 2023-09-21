@@ -114,7 +114,7 @@ export default {
         pint: '#ffd000',
     },
     fontFamily: {
-        sans: ['scandia-web', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
         mono: ['source-code-pro', ...defaultTheme.fontFamily.mono],
     },
   },

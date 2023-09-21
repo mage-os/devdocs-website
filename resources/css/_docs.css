@@ -3,27 +3,27 @@
 }
 
 .docs_main {
-    a[name] {
+    & a[name] {
         position: relative;
         display: block;
         visibility: hidden;
         top: -45px;
     }
 
-    table {
+    & table {
         border-collapse: collapse;
         width: 100%;
         font-size: 13px;
         margin-bottom: 2em;
 
-        th,
-        td {
+        & th,
+        & td {
             border: 1px solid theme('colors.gray.300');
             padding: 10px;
             text-align: left;
         }
 
-        th {
+        & th {
             font-size: 16px;
         }
     }
@@ -43,74 +43,74 @@
         display: none;
     }
 
-    h1 {
+    & h1 {
         font-size: 2.5em;
         letter-spacing: 0em;
     }
 
-    h2 {
+    & h2 {
         font-size: 1.75em;
         letter-spacing: 0;
     }
 
-    h3 {
+    & h3 {
         font-size: 1.25em;
         letter-spacing: 0;
         font-weight: 500;
     }
 
-    h4 {
+    & h4 {
         font-size: 1em;
         font-weight: 500;
         letter-spacing: 0;
     }
 
-    h4 a, h3 a, h2 a {
+    & h4 a, & h3 a, & h2 a {
 		color: theme('colors.gray.900');
 	}
 
-    h4 a:before,
-    h3 a:before,
-    h2 a:before {
-        content: "#";
+    & h4 a:before,
+    & h3 a:before,
+    & h2 a:before {
+        content: "»";
         font-weight: 400;
         position: absolute;
         color: theme('colors.red.600');
         opacity: .6;
     }
 
-    h3 a:before,
-    h2 a:before {
+    & h3 a:before,
+    & h2 a:before {
         margin-left: -25px;
         font-size: 28px;
     }
 
-    h4 a:before {
+    & h4 a:before {
         margin-left: -18px;
         font-size: 17px;
     }
 
-    code {
+    & code {
         font-size: 0.8rem;
         font-weight: 500;
         line-height: 1.9;
         color: theme('colors.gray.900');
     }
 
-    p {
+    & p {
         font-size: 1rem;
         line-height: 1.8em;
 
-        code {
+        & code {
             font-size: 0.8rem;
         }
     }
 
-    ul:not(:first-of-type), .content-list ul {
+    & ul:not(:first-of-type), .content-list ul {
         list-style-type: none;
         margin: 0 0 2.5em 0; padding: 0;
 
-        li {
+        & li {
             position: relative;
             display: block;
             padding-left: 1.25em;
@@ -119,11 +119,11 @@
             color: theme('colors.gray.700');
             line-height: 1.714em;
 
-            a {
+            & a {
                 text-decoration: none;
             }
 
-            code {
+            & code {
                 font-size: .875em;
             }
 
@@ -145,11 +145,11 @@
     margin: 0;
     padding: 0;
 
-    li {
+    & li {
         display: block;
         margin-bottom: .5em;
 
-        a {
+        & a {
             position: relative;
             font-size: .89em;
             font-weight: 500;
@@ -157,21 +157,21 @@
             text-decoration: none;
 
             &::before {
-                content: "# ";
+                content: "» ";
                 color: theme('colors.orange.600');
             }
         }
     }
 
-    ul {
+    & ul {
         margin-top: .5em;
         padding: 0;
         margin-bottom: 0;
 
-        li {
+        & li {
             padding-left: 1.5em;
 
-            a {
+            & a {
                 font-weight: 400;
             }
         }

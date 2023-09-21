@@ -1,18 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Code+Pro:wght@400;600&display=swap');
+
 .docs_main {
-    h1, h2, h3, h4, h5, h6 {
+    & h1, & h2, & h3, & h4, & h5, & h6 {
         font-weight: 500;
         margin-bottom: 0.75em;
     }
 
-    h2, h3 {
+    & h2, & h3 {
         margin-top:  2em;
     }
 
-    h4 {
+    & h4 {
         margin-top:  1.5em;
     }
 
-    h1 {
+    & h1 {
         font-size: 2em;
         letter-spacing: -1px;
         line-height: 1.125em;
@@ -35,7 +37,7 @@
         }
     }
 
-    h2 {
+    & h2 {
         font-size: 1.75em;
         font-weight: 400;
         letter-spacing: -.5px;
@@ -50,7 +52,7 @@
         }
     }
 
-    h3 {
+    & h3 {
         font-size: 1.25em;
         font-weight: 500;
         line-height: 1.25em;
@@ -65,7 +67,7 @@
         }
     }
 
-    h4 {
+    & h4 {
         font-size: 1em;
         font-weight: 400;
         letter-spacing: -.25px;
@@ -75,7 +77,7 @@
         }
     }
 
-    h5 {
+    & h5 {
         font-size: .95em;
         font-weight: 700;
         line-height: 1.666em;
@@ -86,13 +88,13 @@
         }
     }
 
-    h6 {
+    & h6 {
         font-size: .875em;
         font-weight: 500;
         color: theme('colors.gray.600');
     }
 
-    a {
+    & a {
         position: relative;
         text-decoration: none;
         transition: all .3s ease;
@@ -101,25 +103,25 @@
             color: theme('colors.red.600');
             font-weight: 500;
 
-            span {
+            & span {
                 display: inline-block;
                 transition: transform .3s ease;
             }
 
             &:hover {
-                span {
+                & span {
                     transform: translateX(.5em);
                 }
             }
         }
     }
 
-    p {
+    & p {
         font-size: 1em;
         line-height: 1.666em;
         color: theme('colors.gray.700');
 
-        strong {
+        & strong {
             font-weight: 500;
         }
 
@@ -137,14 +139,14 @@
         }
     }
 
-    p + pre {
+    & p + & pre {
         margin-top:  0;
     }
 
-    p, ul, ol, pre {
+    & p, & ul, & ol, & pre {
         margin-bottom: 1.5em;
 
-        a {
+        & a {
             color: theme('colors.red.600');
             text-decoration: underline;
             word-break: break-word;
@@ -154,8 +156,13 @@
             }
         }
     }
+     & ol {
+            list-style-type: decimal;
+            margin-left: 1.5em;
+         line-height:1.8rem;
+    }
 
-    q, blockquote p {
+    & q, & blockquote p {
         quotes: "“" "”" "‘" "’";
     }
 
@@ -166,14 +173,14 @@
         }
     }
 
-    span.small_text {
+    & span.small_text {
         display: block;
         font-size: .625em;
         line-height: 1.4em;
         color: theme('colors.gray.700');
     }
 
-    span.label, label {
+    & span.label, & label {
         display: block;
         font-size: .625em;
         line-height: 1.4em;
@@ -183,7 +190,7 @@
         letter-spacing: 2.5px;
     }
 
-    code {
+    & code {
         font-size: .875em;
         font-family: theme('fontFamily.mono');
         line-height: 1.714em;

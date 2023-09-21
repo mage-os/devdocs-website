@@ -7,12 +7,11 @@ if (! defined('DEFAULT_VERSION')) {
     define('DEFAULT_VERSION', 'main');
 }
 
-Route::get('docs', [DocsController::class, 'showRootPage']);
+Route::get('/', [DocsController::class, 'showRootPage']);
 
 Route::get('docs/{version}/index.json', [DocsController::class, 'index']);
 Route::get('docs/{version}/{page?}', [DocsController::class, 'show'])->name('docs.version');
 
-Route::get('/', fn() => view('marketing'))->name('marketing');
 
 Route::get('team', function () {
     return view('team', [

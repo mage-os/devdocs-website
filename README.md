@@ -8,13 +8,18 @@ If you want to curate, edit, add or change content on the documentation, please 
 to [the Mage-OS DevdDocs Repository](https://github.com/mage-os/devdocs).
 
 ## Local Development
-
 The website is build with Laravel. **A database is not required**. You can run the website locally with the following
 commands:
 
 ```bash
-composer install
-npm install
+git clone git@github.com:mage-os/devdocs-website.git devdocs-website
+cd devdocs-website
+bash bin/setup.sh
+```
+
+Next, you need to compile the assets and start the server:
+
+```bash
 npm run dev
 php artisan serve
 ```
@@ -32,11 +37,12 @@ option for you.
 ### Torchlight Integration
 
 This project relies on Torchlight for syntax highlighting. You will need to create an account
-at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. Once generated,
-add your token to your .env file:
+at [torchlight.dev](https://torchlight.dev/) and generate a free personal token for use in this project. If you used 
+the `bin/setup.sh` script to setup the project, the token is in your .env file. If not, add the following line to your
+.env file manually:
 
 ```ini
-TORCHLIGHT_TOKEN = your-torchlight-token
+TORCHLIGHT_TOKEN=your-torchlight-token
 ```
 
 ### Syncing Upstream Changes Into Your Fork
