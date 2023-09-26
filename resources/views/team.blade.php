@@ -4,19 +4,6 @@
     @include('partials.header')
 
     <div class="relative overflow-hidden">
-        <div class="hidden absolute right-[20%] top-12 pointer-events-none sm:block ">
-            <x-cube />
-        </div>
-        <div class="hidden absolute top-[25%] pointer-events-none sm:block md:right-1/2">
-            <x-cube :delay="2000" />
-        </div>
-        <div class="hidden absolute -right-2 top-2/3 pointer-events-none sm:block md:right-1/4">
-            <x-cube :delay="1000" />
-        </div>
-        <div class="hidden absolute bottom-0 right-6 -translate-y-20 pointer-events-none sm:block md:right-[12%]">
-            <x-cube :delay="3000" />
-        </div>
-
         <div class="relative max-w-screen-xl mx-auto px-5 pt-16 md:pt-32 space-y-8 md:space-y-0 md:flex md:items-end">
             <div class="md:flex-1">
                 <h1 class="max-w-md font-medium text-3xl tracking-tight sm:text-4xl md:max-w-4xl md:text-5xl md:leading-tight xl:text-6xl">The Mage-OS Documentation Team</h1>
