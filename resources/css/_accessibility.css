@@ -1,11 +1,6 @@
 #skip-to-content-link:not(:focus) {
-    position: absolute !important;
     clip: rect(0, 0, 0, 0) !important;
-    width: 1px !important;
-    height: 1px !important;
-    padding: 0 !important;
-    margin: -1px !important;
-    overflow: hidden !important;
+    @apply !overflow-hidden !-m-[1px] !p-0 !h-[1px] !p-[1px] !absolute;
 }
 
 #skip-to-content-link {
@@ -13,6 +8,5 @@
 }
 
 #main-content {
-    outline: none;
+    @apply outline-none;
 }
-
