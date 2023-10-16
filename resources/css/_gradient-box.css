@@ -1,0 +1,17 @@
+.gradient-box {
+    position: relative;
+    background: #fff;
+    background-clip: padding-box;
+    border: solid 5px transparent;
+    border-radius: 1em;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -5px;
+        border-radius: inherit;
+        background: linear-gradient(to left, red, orange);
+    }
+}
