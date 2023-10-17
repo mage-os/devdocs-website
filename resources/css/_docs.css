@@ -42,7 +42,7 @@
 
             &::before {
                 content: "";
-                @apply absolute w-[9px] h-[10px] left-0 top-[0.40em] bg-contain;
+                @apply absolute w-[9px] h-[10px] left-0 -ml-5 top-[0.40em] bg-contain;
                 background: url(/img/icons/ul_marker.min.svg) no-repeat center;
             }
         }
@@ -82,7 +82,7 @@
         @apply pl-4 relative;
 
         &:before {
-            @apply absolute top-[0.15em] left-0 w-[9px] h-[10px] bg-contain bg-no-repeat;
+            @apply absolute -ml-5 top-[0.15em] left-0 w-[9px] h-[10px] bg-contain bg-no-repeat;
             content: "";
             background: url(/img/icons/ul_marker.min.svg) 50%;
         }
