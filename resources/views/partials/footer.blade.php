@@ -59,21 +59,21 @@
         <div class="mt-6 grid grid-cols-12 md:gap-x-8 gap-y-12 sm:mt-12">
             <div class="col-span-12 lg:col-span-4">
                 <p class="max-w-sm text-xs text-gray-700 sm:text-sm {{ $is_docs_page ? 'dark:text-gray-500' : '' }}">Magento Open Source has been a uniquely inspired platform for eCommerce merchants, developers, and agencies worldwide since 2008. Today Mage-OS builds on this well-established product, and leverages its vast Community to be the open source eCommerce operating system of the future.</p>
-                <ul class="mt-6 flex items-center space-x-3">
+                <ul class="mt-6 flex items-center space-x-1 md:space-x-3">
                     <li>
-                        <a href="https://twitter.com/mage_os">
+                        <a href="https://twitter.com/mage_os" class="p-2 md:p-0">
                             <img class="{{ $is_docs_page ? 'hidden dark:inline-block' : 'hidden' }} w-6 h-6" src="/img/social/twitter.dark.min.svg" alt="Twitter" width="24" height="20" loading="lazy">
                             <img class="{{ $is_docs_page ? 'inline-block dark:hidden' : 'inline-block' }} w-6 h-6" src="/img/social/twitter.min.svg" alt="Twitter" width="24" height="20" loading="lazy">
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/mage-os">
+                        <a href="https://github.com/mage-os" class="p-2 md:p-0">
                             <img class="{{ $is_docs_page ? 'hidden dark:inline-block' : 'hidden' }} w-6 h-6" src="/img/social/github.dark.min.svg" alt="GitHub" width="24" height="24" loading="lazy">
                             <img class="{{ $is_docs_page ? 'inline-block dark:hidden' : 'inline-block' }} w-6 h-6" src="/img/social/github.min.svg" alt="GitHub" width="24" height="24" loading="lazy">
                         </a>
                     </li>
                     <li>
-                        <a href="https://discord.gg/mE6PBDE8GR">
+                        <a href="https://discord.gg/mE6PBDE8GR" class="p-2 md:p-0">
                             <img class="{{ $is_docs_page ? 'hidden dark:inline-block' : 'hidden' }} w-6 h-6" src="/img/social/discord.dark.min.svg" alt="Discord" width="21" height="24" loading="lazy">
                             <img class="{{ $is_docs_page ? 'inline-block dark:hidden' : 'inline-block' }} w-6 h-6" src="/img/social/discord.min.svg" alt="Discord" width="21" height="24" loading="lazy">
                         </a>
@@ -84,10 +84,10 @@
                 <div class="text-xs col-span-6 md:col-span-3 lg:col-span-2">
                     <span class="uppercase {{ $is_docs_page ? 'dark:text-gray-200' : '' }}">{{ $column['title'] }}</span>
                     <div class="mt-5">
-                        <ul class="space-y-3 text-gray-700 {{ $is_docs_page ? 'dark:text-gray-500' : '' }}">
+                        <ul class="space-y-3.5 md:space-y-3 text-gray-700 {{ $is_docs_page ? 'dark:text-gray-500' : '' }}">
                             @foreach ($column['links'] as $title => $href)
                                 <li>
-                                    <a href="{{ $href }}" class="transition-colors hover:text-gray-600 {{ $is_docs_page ? 'dark:hover:text-gray-400' : '' }}">{{ $title }}</a>
+                                    <a href="{{ $href }}" class="transition-colors hover:text-gray-600 py-1.5 md:py-1 {{ $is_docs_page ? 'dark:hover:text-gray-400' : '' }}">{{ $title }}</a>
                                 </li>
                             @endforeach
                         </ul>
