@@ -16,7 +16,7 @@
 
             li {
                 a {
-                    @apply relative pl-4 font-normal leading-3;
+                    @apply relative pl-4 font-normal;
                 }
 
                 &.active a::before {
