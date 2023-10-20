@@ -10,6 +10,7 @@ use Torchlight\Commonmark\V2\TorchlightExtension;
 use League\CommonMark\Environment\EnvironmentInterface;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\Mention\MentionExtension;
 
 /**
  * Converts GitHub Flavored Markdown to HTML.
@@ -45,6 +46,14 @@ class GithubFlavoredMarkdownConverter extends MarkdownConverter
             'normalize' => 'relative',
             'placeholder' => '[TOC]',
         ];
+        $config['mentions'] = [
+                'github_handle' => [
+                    'prefix'    => '@',
+                    'pattern'   => '[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}(?!\w)',
+                    'generator' => 'https://github.com/%s',
+                ]
+        ];
+
         $environment = new Environment($config);
         $environment->addExtension(new CommonMarkCoreExtension());
         $environment->addExtension(new GithubFlavoredMarkdownExtension());
@@ -52,6 +61,7 @@ class GithubFlavoredMarkdownConverter extends MarkdownConverter
         $environment->addExtension(new TorchlightExtension());
         $environment->addExtension(new HeadingPermalinkExtension());
         $environment->addExtension(new TableOfContentsExtension());
+        $environment->addExtension(new MentionExtension());
 
 
         parent::__construct($environment);
