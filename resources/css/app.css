@@ -1,6 +1,6 @@
-@import 'tailwindcss/base';
+@import "tailwindcss/base";
 
-@import 'tailwindcss/components';
+@import "tailwindcss/components";
 
 @import "./_typography.css";
 @import "./_code.css";
@@ -9,29 +9,32 @@
 @import "./_docs.css";
 @import "./_accessibility.css";
 
-@import 'tailwindcss/utilities';
+@import "tailwindcss/utilities";
 
 @import "./_dark_mode.css";
 @import "./_gradient-box.css";
 
 [x-cloak] {
-    display: none !important;
+    @apply !hidden;
 }
 
 .bg-radial-gradient {
-    background-image: radial-gradient(50% 50% at 50% 50%, #EB4432 0%, rgba(255, 255, 255, 0) 100%);
+    background-image: radial-gradient(
+        50% 50% at 50% 50%,
+        #eb4432 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
 }
 
 .partners_body a {
-    color: theme('colors.red.600');
-    text-decoration: underline;
+    @apply text-red-600 underline;
 }
 
 .version-colors {
     @apply sm:flex dark:text-gray-400 mb-1;
 }
 .version-colors .color-box {
-    @apply w-3 h-3 mr-2 ;
+    @apply w-3 h-3 mr-2;
 }
 .version-colors div.end-of-life {
     @apply flex items-center mr-4;
@@ -47,6 +50,6 @@
 }
 
 .mermaid {
-    background-color:#292D3E;
     @apply p-4;
+    background-color: #292d3e;
 }

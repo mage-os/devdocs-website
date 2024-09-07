@@ -1,72 +1,39 @@
 .docs_sidebar {
-    & ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+    ul {
+        @apply list-none m-0 p-0;
 
-        & li {
-            display: block;
-            padding: .65em 0;
+        li {
+            @apply block py-[0.65em] px-0;
 
-            & h2 {
-                display: block;
-                font-size: 0.875em;
-                font-weight: 500;
-                color: theme('colors.gray.900');
-                text-decoration: none;
-                margin-bottom: 0;
-                cursor: pointer;
-                transition: all 0.3s ease;
-
-                &:hover {
-                    transform: translate3d(5px, 0, 0);
-                }
-            }
-
-            & a {
-                display: block;
-                font-size: .875em;
-                font-weight: 500;
-                color: theme('colors.gray.900');
-                text-decoration: none;
-                transition: transform 0.3s ease;
-
-                &:hover {
-                    transform: translate3d(5px, 0, 0);
-                }
+            h2,
+            a {
+                @apply block transition hover:translate-x-2 text-gray-900 no-underline mb-0 cursor-pointer text-sm px-1 hover:text-orange-500;
             }
         }
 
-        & ul {
-            overflow: hidden;
-            max-height: 0;
-            transition: max-height .45s ease;
+        ul {
+            @apply overflow-hidden max-h-0 transition-all duration-500;
 
-            & li {
-                & a {
-                    position: relative;
-                    padding-left: 1em;
-                    font-weight: 400;
-                    line-height: 1.25;
+            li {
+                a {
+                    @apply relative pl-4 font-normal;
                 }
 
                 &.active a::before {
+                    @apply absolute left-0 top-[0.25em] w-2 h-2 bg-center bg-no-repeat;
                     content: "";
-                    position: absolute;
-                    top: .25em; left: 0;
-                    width: .5rem; height: .5rem;
-                    background: url(/img/icons/active_marker.min.svg) no-repeat center;
+                    background: url(/img/icons/active_marker.min.svg);
                 }
             }
         }
 
         .sub--on {
-            &> h2 {
-                margin-bottom: 1em;
+            > h2 {
+                @apply mb-2;
             }
 
-            & ul {
-                max-height: none;
+            ul {
+                @apply max-h-none;
             }
         }
     }

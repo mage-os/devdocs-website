@@ -1,225 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Code+Pro:wght@400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Source+Code+Pro:wght@400;600&display=swap");
 
 .docs_main {
-    & h1, & h2, & h3, & h4, & h5, & h6 {
-        font-weight: 500;
-        margin-bottom: 0.75em;
+    /*
+    * Headings
+    */
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-semibold mb-4 md:mb-6 leading-tight text-gray-900;
     }
 
-    & h2, & h3 {
-        margin-top:  2em;
+    h1 {
+        @apply text-2xl md:text-3xl lg:text-4xl leading-tight font-normal mb-6;
     }
 
-    & h4 {
-        margin-top:  1.5em;
+    h2,
+    h3 {
+        @apply mt-8 md:mt-12;
     }
 
-    & h1 {
-        font-size: 2em;
-        letter-spacing: -1px;
-        line-height: 1.125em;
-        margin-bottom: .65em;
-
-        @screen md {
-            font-size: 2.5em;
-        }
-
-        @screen lg {
-            font-size: 3em;
-        }
-
-        @screen xl {
-            font-size: 3.5em;
-        }
-
-        @screen 2xl {
-            font-size: 4em;
-        }
+    h2 {
+        @apply font-normal text-lg md:text-2xl lg:text-3xl;
     }
 
-    & h2 {
-        font-size: 1.75em;
-        font-weight: 400;
-        letter-spacing: -.5px;
-        line-height: 1.125em;
-
-        @screen md {
-            font-size: 2.25em;
-        }
-
-        @screen lg {
-            font-size: 3em;
-        }
+    h3 {
+        @apply font-normal text-base md:text-xl lg:text-2xl;
     }
 
-    & h3 {
-        font-size: 1.25em;
-        font-weight: 500;
-        line-height: 1.25em;
-        letter-spacing: -.33px;
+    h4 {
+        @apply mt-6 md:mt-10 font-normal text-base md:text-lg;
+    }
 
-        @screen sm {
-            font-size: 1.75em;
-        }
+    h5 {
+        @apply font-normal text-base md:text-lg text-gray-700;
+    }
 
-        @screen md {
-            font-size: 2em;
+    h6 {
+        @apply font-normal text-base md:text-lg text-gray-600;
+    }
+
+    /*
+    * Headings Decorations "»"
+    */
+
+    h2,
+    h3,
+    h4 {
+        a:before {
+            content: "»";
+            @apply font-normal absolute text-red-600 opacity-60 -mt-1;
         }
     }
 
-    & h4 {
-        font-size: 1em;
-        font-weight: 400;
-        letter-spacing: -.25px;
-
-        @screen sm {
-            font-size: 1.5em;
+    h2 {
+        a:before {
+            @apply -ml-6 text-3xl -mt-1.5 md:-mt-0.5;
         }
     }
 
-    & h5 {
-        font-size: .95em;
-        font-weight: 700;
-        line-height: 1.666em;
-        color: theme('colors.gray.700');
-
-        @screen sm {
-            font-size: 1.125em;
+    h3 {
+        a:before {
+            @apply -ml-6 text-3xl -mt-2 md:-mt-1;
         }
     }
 
-    & h6 {
-        font-size: .875em;
-        font-weight: 500;
-        color: theme('colors.gray.600');
+    h4 {
+        a:before {
+            @apply -ml-4 text-xl -mt-1 md:-mt-0.5;
+        }
     }
 
-    & a {
-        position: relative;
-        text-decoration: none;
-        transition: all .3s ease;
+    /*
+    * Links
+    */
+
+    a {
+        @apply relative no-underline transition-all;
 
         &.learn_more {
-            color: theme('colors.red.600');
-            font-weight: 500;
+            @apply text-red-600 font-semibold;
 
-            & span {
-                display: inline-block;
-                transition: transform .3s ease;
+            span {
+                @apply inline-block transition-transform;
             }
 
-            &:hover {
-                & span {
-                    transform: translateX(.5em);
-                }
+            &:hover span {
+                @apply translate-x-2;
             }
         }
     }
 
-    & p {
-        font-size: 1em;
-        line-height: 1.666em;
-        color: theme('colors.gray.700');
+    /*
+    * Paragraphs
+    */
 
-        & strong {
-            font-weight: 500;
+    p {
+        @apply text-base leading-7 text-gray-700;
+
+        strong {
+            @apply font-semibold;
         }
 
         &.small {
-            font-size: .75em;
-            line-height: 1.714em;
-        }
-
-        @screen md {
-            font-size: 1.125em;
-
-            &.small {
-                font-size: .875em;
-            }
+            @apply text-xs md:text-sm leading-tight;
         }
     }
 
-    & p + & pre {
-        margin-top:  0;
+    p + pre {
+        @apply mt-0;
     }
 
-    & p, & ul, & ol, & pre {
-        margin-bottom: 1.5em;
+    p,
+    ul,
+    ol,
+    pre {
+        @apply mb-6;
 
-        & a {
-            color: theme('colors.red.600');
-            text-decoration: underline;
-            word-break: break-word;
-
-            &:hover {
-                color: darken(theme('colors.red.600'), 10%);
-            }
+        a {
+            @apply no-underline break-words text-red-600 hover:text-red-700;
         }
     }
-     & ol {
-            list-style-type: decimal;
-            margin-left: 1.5em;
-         line-height:1.8rem;
-    }
 
-    & q, & blockquote p {
+    q,
+    blockquote p {
         quotes: "“" "”" "‘" "’";
     }
 
-    @screen sm {
-        blockquote {
-            margin-left: 0;
-            margin-right: 0;
+    blockquote {
+        @apply sm:mx-0;
+    }
+
+    /*
+    * Lists
+    */
+
+    ol {
+        @apply leading-4 ml-4 list-decimal;
+    }
+
+    span {
+        &.small_text {
+            @apply block text-gray-700 text-sm leading-none;
+            line-height: 1.4em;
         }
     }
 
-    & span.small_text {
-        display: block;
-        font-size: .625em;
+    span.label,
+    & label {
+        @apply block opacity-40 uppercase mb-3;
+        font-size: 0.625em;
         line-height: 1.4em;
-        color: theme('colors.gray.700');
-    }
-
-    & span.label, & label {
-        display: block;
-        font-size: .625em;
-        line-height: 1.4em;
-        text-transform: uppercase;
-        opacity: .4;
-        margin-bottom: .875em;
         letter-spacing: 2.5px;
     }
-
-    & code {
-        font-size: .875em;
-        font-family: theme('fontFamily.mono');
-        line-height: 1.714em;
-        color: theme('colors.gray.900');
-    }
-
-    :not(pre) > code {
-        background: theme('colors.gray.50');
-        color: theme('colors.red.800');
-        padding: 0 .25em;
-    }
-}
-
-.list-custom li {
-    position: relative;
-    padding-left: 1rem;
-}
-
-.list-custom li:before {
-    content: "";
-    position: absolute;
-    top: .15em;
-    left: 0;
-    width: 9px;
-    height: 10px;
-    background: url(/img/icons/ul_marker.min.svg) no-repeat 50%;
-    background-size: contain;
-}
-
-.table-of-contents {
-    margin-bottom: 2em !important;
 }
