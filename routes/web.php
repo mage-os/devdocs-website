@@ -15,6 +15,8 @@ Route::get('docs/{version}/{page?}', [DocsController::class, 'show'])->name('doc
 
 Route::get('team', function () {
     return view('team', [
+        'metaTitle' => \App\Http\Controllers\DocsController::DEFAULT_META_TITLE,
+        'canonical' => 'team',
         'team' => [
             [
                 'name' => 'David Lambauer',
