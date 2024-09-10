@@ -8,6 +8,7 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocsController extends Controller
 {
+    public const DEFAULT_META_TITLE = 'Mage-OS - Community driven eCommerce';
     /**
      * The documentation repository.
      *
@@ -124,6 +125,7 @@ class DocsController extends Controller
             'currentSection' => $section,
             'canonical' => $canonical,
             'edit_link' => $this->docs->getEditUrl($version, $sectionPage),
+            'metaTitle' => count($title) ? $title->text() : self::DEFAULT_META_TITLE
         ]);
     }
 
