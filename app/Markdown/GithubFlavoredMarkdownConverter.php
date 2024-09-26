@@ -10,6 +10,8 @@ use Torchlight\Commonmark\V2\TorchlightExtension;
 use League\CommonMark\Environment\EnvironmentInterface;
 use League\CommonMark\Extension\Attributes\AttributesExtension;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
+use League\CommonMark\Extension\FrontMatter\FrontMatterExtension;
+use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter;
 
 /**
  * Converts GitHub Flavored Markdown to HTML.
@@ -45,6 +47,7 @@ class GithubFlavoredMarkdownConverter extends MarkdownConverter
             'normalize' => 'relative',
             'placeholder' => '[TOC]',
         ];
+
         $environment = new Environment($config);
         $environment->addExtension(new CommonMarkCoreExtension());
         $environment->addExtension(new GithubFlavoredMarkdownExtension());
@@ -52,7 +55,7 @@ class GithubFlavoredMarkdownConverter extends MarkdownConverter
         $environment->addExtension(new TorchlightExtension());
         $environment->addExtension(new HeadingPermalinkExtension());
         $environment->addExtension(new TableOfContentsExtension());
-
+        $environment->addExtension(new FrontMatterExtension());
 
         parent::__construct($environment);
     }

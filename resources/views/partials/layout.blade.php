@@ -11,21 +11,22 @@
     @endif
 
     <!-- Primary Meta Tags -->
-    <meta name="title" content="Mage-OS - Community driven eCommerce">
-    <meta name="description" content="The Mage-OS Association is a non-profit association Formed by people within the Magento community to represent and further the interests of that community as a whole: Merchants, developers, agencies, and all of the many people supporting and supported by this ecosystem.">
+    <meta name="title" content="{{ $metaTitle }}">
+    <meta name="description" content="{{ $metaDescription }}">
+    <meta name="keywords" content="{{ $metaKeywords }}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://mage-os.org/">
-    <meta property="og:title" content="Mage-OS - Community driven eCommerce">
-    <meta property="og:description" content="The Mage-OS Association is a non-profit association Formed by people within the Magento community to represent and further the interests of that community as a whole: Merchants, developers, agencies, and all of the many people supporting and supported by this ecosystem.">
+    <meta property="og:url" content="{{ $canonical ? url($canonical) : 'https://mage-os.org/' }}">
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="og:description" content="{{ $metaDescription }}">
     <meta property="og:image" content="https://mage-os.org/wp-content/uploads/2023/05/page-icon.png">
 
-    <!-- Twitter -->
+    <!-- Twitter / X -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://mage-os.org/">
-    <meta property="twitter:title" content="Mage-OS - Community driven eCommerce">
-    <meta property="twitter:description" content="The Mage-OS Association is a non-profit association Formed by people within the Magento community to represent and further the interests of that community as a whole: Merchants, developers, agencies, and all of the many people supporting and supported by this ecosystem.">
+    <meta property="og:url" content="{{ $canonical ? url($canonical) : 'https://mage-os.org/' }}">
+    <meta property="og:title" content="{{ $metaTitle }}">
+    <meta property="twitter:description" content="{{ $metaDescription }}">
     <meta property="twitter:image" content="https://mage-os.org/wp-content/uploads/2023/05/page-icon.png">
 
     <!-- Favicon -->

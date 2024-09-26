@@ -8,6 +8,10 @@ use Symfony\Component\DomCrawler\Crawler;
 
 class DocsController extends Controller
 {
+    public const DEFAULT_META_TITLE = 'Mage-OS - Community driven eCommerce';
+    public const DEFAULT_META_DESCRIPTION = 'The Mage-OS Association is a non-profit association Formed by people within the Magento community to represent and further the interests of that community as a whole: Merchants, developers, agencies, and all of the many people supporting and supported by this ecosystem.';
+    const DEFAULT_META_KEYWORDS = 'Mage-OS, Magento 2';
+
     /**
      * The documentation repository.
      *
@@ -80,7 +84,12 @@ class DocsController extends Controller
         }
 
         $sectionPage = $page ?: 'installation-guide';
-        $content = $this->docs->get($version, $sectionPage);
+        $docPage = $this->docs->get($version, $sectionPage);
+        $content = $docPage['content'];
+        $pageCustomData = $docPage['frontendMatter'];
+        $metaDescription = $pageCustomData['description'] ?? self::DEFAULT_META_DESCRIPTION;
+        $metaKeywords = $pageCustomData['keywords'] ?? self::DEFAULT_META_KEYWORDS;
+        $communityNote = $pageCustomData['communityNote'] ?? true;
 
         if (is_null($content)) {
             $otherVersions = $this->docs->versionsContainingPage($page);
@@ -116,7 +125,7 @@ class DocsController extends Controller
         }
 
         return view('docs', [
-            'title' => count($title) ? $title->text() : null,
+            'title' => count($title) ? $title->text() : self::DEFAULT_META_TITLE,
             'index' => $this->docs->getIndex($version),
             'content' => $content,
             'currentVersion' => $version,
@@ -124,6 +133,10 @@ class DocsController extends Controller
             'currentSection' => $section,
             'canonical' => $canonical,
             'edit_link' => $this->docs->getEditUrl($version, $sectionPage),
+            'metaTitle' => count($title) ? $title->text() : self::DEFAULT_META_TITLE,
+            'metaDescription' => $metaDescription,
+            'metaKeywords' => $metaKeywords,
+            'communityNote' => $communityNote,
         ]);
     }
 
