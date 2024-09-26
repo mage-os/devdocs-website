@@ -72,6 +72,11 @@ Route::get('team', function () {
                 'twitter_username' => 'damienwebdev',
                 'location' => 'Richmond, VA',
             ]
-        ]
+        ],
+        'title' => 'Team',
+        'metaTitle' => DocsController::DEFAULT_META_TITLE,
+        'metaDescription' => DocsController::DEFAULT_META_DESCRIPTION,
+        'metaKeywords' => DocsController::DEFAULT_META_KEYWORDS,
+        'canonical' => 'team'
     ]);
 })->name('team');

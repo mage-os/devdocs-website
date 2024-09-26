@@ -274,7 +274,7 @@
                                 </blockquote>
                             @endif
 
-                            <x-accessibility.main-content-wrapper>
+                            <x-accessibility.main-content-wrapper :communityNote="$communityNote">
                                 {!! $content !!}
                             </x-accessibility.main-content-wrapper>
                         </section>

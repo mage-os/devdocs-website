@@ -7,6 +7,7 @@ use Illuminate\Filesystem\Filesystem;
 use App\Markdown\GithubFlavoredMarkdownConverter;
 use Carbon\CarbonInterval;
 use Illuminate\Contracts\Cache\Repository as Cache;
+use League\CommonMark\Extension\FrontMatter\Output\RenderedContentWithFrontMatter;
 
 class Documentation
 {
@@ -78,10 +79,11 @@ class Documentation
      *
      * @param  string  $version
      * @param  string  $page
-     * @return string|null
+     * @return array|null
      */
     public function get($version, $page)
     {
+
         return $this->cache->remember('docs.'.$version.'.'.$page, 5, function () use ($version, $page) {
             $path = base_path('resources/docs/'.$version.'/'.$page.'.md');
 
@@ -89,8 +91,15 @@ class Documentation
                 $content = $this->files->get($path);
 
                 $content = (new GithubFlavoredMarkdownConverter())->convert($content);
+                $frontendMatter = [];
+                if ($content instanceof RenderedContentWithFrontMatter) {
+                    $frontendMatter = $content->getFrontMatter();
+                }
 
-                return $this->replaceLinks($version, $content);
+                return [
+                    'content' => $this->replaceLinks($version, $content),
+                    'frontendMatter' => $frontendMatter,
+                ];
             }
 
             return null;
