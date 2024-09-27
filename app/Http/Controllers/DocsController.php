@@ -10,7 +10,7 @@ class DocsController extends Controller
 {
     public const DEFAULT_META_TITLE = 'Mage-OS - Community driven eCommerce';
     public const DEFAULT_META_DESCRIPTION = 'The Mage-OS Association is a non-profit association Formed by people within the Magento community to represent and further the interests of that community as a whole: Merchants, developers, agencies, and all of the many people supporting and supported by this ecosystem.';
-    const DEFAULT_META_KEYWORDS = 'Mage-OS, Magento 2';
+    const DEFAULT_META_KEYWORDS = 'Mage-OS DevDocs, Magento Documentation, Magento DevDocs, developer documentation';
 
     /**
      * The documentation repository.
