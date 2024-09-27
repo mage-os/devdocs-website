@@ -13,7 +13,7 @@
             </div>
             <div class="flex-1 flex items-center justify-end">
                 <button id="docsearch"></button>
-                <x-button.secondary href="/docs" class="hidden lg:ml-4 lg:inline-flex">Documentation</x-button.secondary>
+                <x-button.secondary href="/docs/main" class="hidden lg:ml-4 lg:inline-flex">Documentation</x-button.secondary>
                 <button
                     class="ml-2 relative w-10 h-10 inline-flex items-center justify-center p-2 text-gray-700 lg:hidden"
                     aria-label="Toggle Menu"
