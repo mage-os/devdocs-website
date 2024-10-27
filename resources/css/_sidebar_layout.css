@@ -9,6 +9,11 @@
             a {
                 @apply block transition hover:translate-x-2 text-gray-900 no-underline mb-0 cursor-pointer text-sm px-1 hover:text-orange-500;
             }
+
+            &.has-children > a::after {
+                content: "▼";
+                @apply ml-2 text-gray-500;
+            }
         }
 
         ul {
@@ -23,6 +28,11 @@
                     @apply absolute left-0 top-[0.25em] w-2 h-2 bg-center bg-no-repeat;
                     content: "";
                     background: url(/img/icons/active_marker.min.svg);
+                }
+
+                &.child-indicator > a::before {
+                    content: "•";
+                    @apply absolute left-0 top-[0.25em] text-gray-500;
                 }
             }
         }
