@@ -277,6 +277,38 @@
                             <x-accessibility.main-content-wrapper :communityNote="$communityNote">
                                 {!! $content !!}
                             </x-accessibility.main-content-wrapper>
+
+                            @if (isset($faqs) && count($faqs) > 0)
+                                <section class="mt-8">
+                                    <h2>Frequently Asked Questions</h2>
+                                    <div>
+                                        @foreach ($faqs as $faq)
+                                            <div class="faq-item">
+                                                <h3>{{ $faq['question'] }}</h3>
+                                                <p>{{ $faq['answer'] }}</p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </section>
+                                <script type="application/ld+json">
+                                    {
+                                        "@context": "https://schema.org",
+                                        "@type": "FAQPage",
+                                        "mainEntity": [
+                                            @foreach ($faqs as $faq)
+                                            {
+                                                "@type": "Question",
+                                                "name": "{{ $faq['question'] }}",
+                                                "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "{{ $faq['answer'] }}"
+                                                }
+                                            }@if (!$loop->last),@endif
+                                            @endforeach
+                                        ]
+                                    }
+                                </script>
+                            @endif
                         </section>
                     </section>
                 </div>

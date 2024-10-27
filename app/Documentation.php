@@ -198,4 +198,26 @@ class Documentation
             '2.4.5' => '2.4.5',
         ];
     }
+
+    /**
+     * Generate FAQs from the given documentation content.
+     *
+     * @param  string  $content
+     * @return array
+     */
+    public function generateFaqs($content)
+    {
+        // Use GPT to generate FAQs from the content
+        // This is a placeholder for the actual implementation
+        return [
+            [
+                'question' => 'What is Mage-OS?',
+                'answer' => 'Mage-OS is a community-driven eCommerce platform.'
+            ],
+            [
+                'question' => 'How do I install Mage-OS?',
+                'answer' => 'You can install Mage-OS by following the installation guide in the documentation.'
+            ]
+        ];
+    }
 }
