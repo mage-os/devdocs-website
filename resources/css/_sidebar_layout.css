@@ -9,11 +9,6 @@
             a {
                 @apply block transition hover:translate-x-2 text-gray-900 no-underline mb-0 cursor-pointer text-sm px-1 hover:text-orange-500;
             }
-
-            &.has-children > a::after {
-                content: "▼";
-                @apply ml-2 text-gray-500;
-            }
         }
 
         ul {
@@ -32,14 +27,14 @@
 
                 &.child-indicator > a::before {
                     content: "•";
-                    @apply absolute left-0 top-[0.25em] text-gray-500;
+                    @apply absolute left-[3px] top-0 text-gray-500;
                 }
             }
         }
 
         .sub--on {
             > h2 {
-                @apply mb-2;
+                @apply mb-2 font-semibold;
             }
 
             ul {
