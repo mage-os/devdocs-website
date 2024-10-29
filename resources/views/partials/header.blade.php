@@ -32,5 +32,17 @@
         x-transition:leave="duration-100 ease-in"
         x-cloak
     >
+        <nav class="bg-white shadow-lg">
+            <ul class="space-y-2">
+                <li class="has-children">
+                    <a href="#" class="block px-4 py-2 text-gray-700">Parent Item</a>
+                    <ul class="pl-4 space-y-1">
+                        <li class="child-indicator">
+                            <a href="#" class="block px-4 py-2 text-gray-700">Child Item</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </div>
 </header>

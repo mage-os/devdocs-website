@@ -49,6 +49,18 @@ function setupNavCurrentLinkHandling() {
             }
         });
     });
+
+    // Add .has-children class to parent elements
+    [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => {
+        if (el.querySelector('ul')) {
+            el.classList.add('has-children');
+        }
+    });
+
+    // Add .child-indicator class to child elements
+    [...document.querySelectorAll('.docs_sidebar ul ul li')].forEach(el => {
+        el.classList.add('child-indicator');
+    });
 }
 
 function replaceBlockquotesWithCalloutsInDocs() {

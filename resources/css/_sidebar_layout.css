@@ -24,12 +24,17 @@
                     content: "";
                     background: url(/img/icons/active_marker.min.svg);
                 }
+
+                &.child-indicator > a::before {
+                    content: "•";
+                    @apply absolute left-[3px] top-0 text-gray-500;
+                }
             }
         }
 
         .sub--on {
             > h2 {
-                @apply mb-2;
+                @apply mb-2 font-semibold;
             }
 
             ul {
