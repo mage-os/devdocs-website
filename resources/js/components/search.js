@@ -5,7 +5,5 @@ docsearch({
     appId: algolia_app_id,
     apiKey: algolia_search_key,
     indexName: 'devmage-os',
-    searchParameters: {
-        facetFilters: ['version:' + window.version],
-    },
+    searchParameters: {},
 });
