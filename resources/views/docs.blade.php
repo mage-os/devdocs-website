@@ -277,6 +277,9 @@
                             <x-accessibility.main-content-wrapper :communityNote="$communityNote">
                                 {!! $content !!}
                             </x-accessibility.main-content-wrapper>
+                            <x-accessibility.contributors :contributors="$contributors">
+
+                            </x-accessibility.contributors>
                         </section>
                     </section>
                 </div>
