@@ -90,6 +90,8 @@ class DocsController extends Controller
         $metaDescription = $pageCustomData['description'] ?? self::DEFAULT_META_DESCRIPTION;
         $metaKeywords = $pageCustomData['keywords'] ?? self::DEFAULT_META_KEYWORDS;
         $communityNote = $pageCustomData['communityNote'] ?? true;
+        $contributors = $pageCustomData['contributors'] ?? false;
+        $contributorsData = explode(',', $contributors);
 
         if (is_null($content)) {
             $otherVersions = $this->docs->versionsContainingPage($page);
@@ -137,6 +139,7 @@ class DocsController extends Controller
             'metaDescription' => $metaDescription,
             'metaKeywords' => $metaKeywords,
             'communityNote' => $communityNote,
+            'contributors' => $contributorsData,
         ]);
     }
 
