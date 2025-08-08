@@ -90,7 +90,6 @@ class DocsController extends Controller
         $metaDescription = $pageCustomData['description'] ?? self::DEFAULT_META_DESCRIPTION;
         $metaKeywords = $pageCustomData['keywords'] ?? self::DEFAULT_META_KEYWORDS;
         $communityNote = $pageCustomData['communityNote'] ?? true;
-        //var_dump($pageCustomData);die("NIKO");
         $contributors = $pageCustomData['contributors'] ?? false;
         $contributorsData = [];
         if ($contributors) {
