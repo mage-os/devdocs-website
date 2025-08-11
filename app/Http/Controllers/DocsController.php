@@ -91,10 +91,7 @@ class DocsController extends Controller
         $metaKeywords = $pageCustomData['keywords'] ?? self::DEFAULT_META_KEYWORDS;
         $communityNote = $pageCustomData['communityNote'] ?? true;
         $contributors = $pageCustomData['contributors'] ?? false;
-        $contributorsData = [];
-        if ($contributors) {
-            $contributorsData = explode(',', $contributors);
-        }
+        $contributorsData = $contributors ? explode(',', $contributors) : [];
 
         if (is_null($content)) {
             $otherVersions = $this->docs->versionsContainingPage($page);
